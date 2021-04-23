@@ -10,17 +10,21 @@ import { products } from '../products';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product: Product | undefined = undefined;
+  product: Product;
 
   constructor(private route: ActivatedRoute) {
+    this.product = { id: 0, name: '', price: 0, heading: [] };
   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => {
-      this.product = products.find(product => {
+      const foundProduct = products.find(product => {
         const id = Number(paramMap.get('productId'));
         return product.id === id;
       });
+      if (foundProduct) {
+        this.product = foundProduct;
+      }
     });
   }
 
