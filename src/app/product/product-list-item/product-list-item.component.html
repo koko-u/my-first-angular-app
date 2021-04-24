@@ -1,0 +1,11 @@
+<a [routerLink]="[product.id]" class="product-list-item">
+  <div class="card">
+    <img class="card-img-top" [src]="'assets/images/' + product.coverImage" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">
+        {{ product.description }}
+      </p>
+    </div>
+  </div>
+</a>
