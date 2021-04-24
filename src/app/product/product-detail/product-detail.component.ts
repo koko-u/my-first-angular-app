@@ -13,7 +13,7 @@ export class ProductDetailComponent implements OnInit {
   product: Product;
 
   constructor(private route: ActivatedRoute) {
-    this.product = { id: 0, name: '', price: 0, heading: [] };
+    this.product = { id: 0, name: '', coverImage: '', price: 0, heading: [] };
   }
 
   ngOnInit(): void {

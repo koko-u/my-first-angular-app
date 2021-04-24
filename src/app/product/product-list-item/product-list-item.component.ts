@@ -12,7 +12,7 @@ export class ProductListItemComponent implements OnInit {
   product: Product;
 
   constructor() {
-    this.product = { id: 0, name: '', price: 0, heading: []};
+    this.product = { id: 0, name: '', coverImage: '', price: 0, heading: []};
   }
 
   ngOnInit(): void {

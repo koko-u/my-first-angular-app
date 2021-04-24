@@ -4,6 +4,7 @@ export const products: Product[] = [
   {
     id: 1,
     name: 'Product 1',
+    coverImage: 'phone-cover.jpg',
     price: 123,
     description: 'Cum zeta studere, omnes pulchritudinees fallere regius, nobilis brabeutaes.',
     heading: [
@@ -15,6 +16,7 @@ export const products: Product[] = [
   {
     id: 2,
     name: 'Product 2',
+    coverImage: 'phone-cover.jpg',
     price: 24.6,
     description: 'Cum torus favere, omnes nixes demitto altus, dexter rumores.',
     heading: [
@@ -26,6 +28,7 @@ export const products: Product[] = [
   {
     id: 3,
     name: 'Product 3',
+    coverImage: 'phone-cover.jpg',
     price: 56,
     description: 'A falsis, species fatalis consilium.',
     heading: [
@@ -37,6 +40,7 @@ export const products: Product[] = [
   {
     id: 4,
     name: 'Product 4',
+    coverImage: 'phone-cover.jpg',
     price: 200,
     description: 'Cur era cadunt? Eheu, itineris tramitem!',
     heading: [
