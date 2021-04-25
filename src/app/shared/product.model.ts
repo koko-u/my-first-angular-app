@@ -1,7 +1,7 @@
 import { Heading } from './heading.model';
 
 export type Product = {
-  id: number
+  _id: string
   name: string
   coverImage: string
   price: number

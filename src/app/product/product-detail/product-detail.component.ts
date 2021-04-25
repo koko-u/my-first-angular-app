@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../../shared/product.model';
-import { products } from '../products';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -12,20 +12,30 @@ export class ProductDetailComponent implements OnInit {
 
   product: Product;
 
-  constructor(private route: ActivatedRoute) {
-    this.product = { id: 0, name: '', coverImage: '', price: 0, heading: [] };
+  get coverImage(): string {
+    return this.product.coverImage === '' ? '' : `assets/images/${this.product.coverImage}`;
+  }
+
+  constructor(private route: ActivatedRoute,
+              private service: ProductService,
+              private router: Router) {
+    this.product = { _id: '', name: '', coverImage: '', price: 0, heading: [] };
   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => {
-      const foundProduct = products.find(product => {
-        const id = Number(paramMap.get('productId'));
-        return product.id === id;
-      });
-      if (foundProduct) {
-        this.product = foundProduct;
+      const id = paramMap.get('productId');
+      if (id) {
+        this.service.getProductById(id)
+          .subscribe(
+            (product: Product) => {
+              this.product = product;
+            },
+            async (err: any) => {
+              await this.router.navigate(['/']);
+            },
+          );
       }
     });
   }
-
 }

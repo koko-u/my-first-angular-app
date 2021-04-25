@@ -1,27 +1,7 @@
-<!--<div class="container">-->
-<!--  <div class="row">-->
-<!--    <div class="col">-->
-<!--      <h4>-->
-<!--        {{ product?.name }}-->
-<!--      </h4>-->
-<!--      <p class="pt-1">-->
-<!--        {{ product?.description}}-->
-<!--      </p>-->
-
-<!--      <p>-->
-<!--  <span class="mr-1">-->
-<!--    <strong>${{ product?.price }}</strong>-->
-<!--  </span>-->
-<!--      </p>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-
-
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="first-slide" [src]="'assets/images/'  +  product.coverImage" alt="First slide">
+      <img class="first-slide" [src]="coverImage" alt="First slide">
       <div class="container">
         <div class="carousel-caption text-left">
           <h1>{{ product.name }}</h1>
