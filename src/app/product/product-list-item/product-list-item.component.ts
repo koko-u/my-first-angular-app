@@ -11,8 +11,12 @@ export class ProductListItemComponent implements OnInit {
   @Input()
   product: Product;
 
+  get coverImage(): string {
+    return this.product.coverImage ? `assets/images/${this.product.coverImage}` : '';
+  }
+
   constructor() {
-    this.product = { id: 0, name: '', coverImage: '', price: 0, heading: []};
+    this.product = { _id: '', name: '', coverImage: '', price: 0, heading: []};
   }
 
   ngOnInit(): void {

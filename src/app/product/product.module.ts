@@ -6,6 +6,7 @@ import { ProductListItemComponent } from './product-list-item/product-list-item.
 import { ProductRoutingModule } from './product-routing.module';
 import { ProductComponent } from './product.component';
 import { ProductDetailHeadingComponent } from './product-detail-heading/product-detail-heading.component';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,9 @@ import { ProductDetailHeadingComponent } from './product-detail-heading/product-
   imports: [
     CommonModule,
     ProductRoutingModule
+  ],
+  providers: [
+    ProductService
   ]
 })
 export class ProductModule { }
